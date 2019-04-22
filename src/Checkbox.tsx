@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 const Label = styled.label``;
 
-const Input = styled.input`
-  border: 1px solid blue;
-`;
+const Input = styled.input``;
 
 interface CheckboxProps {
   label: React.ReactNode;
