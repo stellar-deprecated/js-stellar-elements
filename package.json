@@ -1,0 +1,24 @@
+{
+  "name": "js-stellar-elements",
+  "version": "0.0.0",
+  "description": "Styled elements for use on Stellar projects",
+  "main": "index.js",
+  "repository": "git@github.com:stellar/js-stellar-elements.git",
+  "author": "Morley Zhi <morley@stellar.org>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.0.10",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
+  },
+  "scripts": {
+    "storybook": "NODE_PATH=src && start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
