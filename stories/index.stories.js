@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { Button, Input } from "index";
+import { Button, Input } from "../src/index";
 
 storiesOf("Form elements", module)
   .add("Button", () => (
