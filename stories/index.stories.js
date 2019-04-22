@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { Button, Input } from "../src/index";
+import { Button, Input, Checkbox } from "../src/index";
 
 storiesOf("Form elements", module)
   .add("Button", () => (
@@ -14,6 +14,25 @@ storiesOf("Form elements", module)
       <Button onClick={action("clicked")} disabled>
         Mark button as clicked
       </Button>
+    </>
+  ))
+  .add("Checkbox", () => (
+    <>
+      <h2>Normal</h2>
+
+      <Checkbox label="This is a really cool label, and good" />
+
+      <h2>Disabled</h2>
+
+      <Checkbox label="This is a really cool label, and good" disabled />
+
+      <h2>Labelfirst</h2>
+
+      <Checkbox
+        label="This is a really cool label, and good"
+        labelFirst
+        disabled
+      />
     </>
   ))
   .add("Input", () => (

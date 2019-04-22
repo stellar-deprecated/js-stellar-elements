@@ -1,10 +1,3 @@
-import { Button } from "./Button";
-import { Input } from "./Input";
-
-export default {
-  Button,
-  Input,
-};
-
-export { Button };
-export { Input };
+export { Button } from "./Button";
+export { Input } from "./Input";
+export { Checkbox } from "./Checkbox";
