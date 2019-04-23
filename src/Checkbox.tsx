@@ -1,14 +1,23 @@
 import * as React from "react";
 import styled from "styled-components";
 
-const Label = styled.label``;
+const Label = styled.label`
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const LabelText = styled.span`
   vertical-align: middle;
 `;
 
 const Input = styled.input`
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
 `;
 
 interface CheckProps {
@@ -21,14 +30,23 @@ const Check = styled.span<CheckProps>`
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: blue;
-  color: white;
+  color: black;
+  border-radius: 2px;
+  border: 1px solid black;
   text-align: center;
   line-height: 20px;
-  cursor: pointer;
 
   margin-left: ${(props) => props.isLabelFirst && "10px"};
   margin-right: ${(props) => !props.isLabelFirst && "10px"};
+
+  ${Label}:focus &,
+  ${Input}:focus + & {
+    box-shadow: 0 3px 5px rgba(0, 0, 255, 0.3);
+  }
+
+  ${Label}:hover & {
+    border-color: #666;
+  }
 
   &:after {
     content: "✓";
