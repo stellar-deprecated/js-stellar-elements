@@ -1,5 +1,5 @@
 {
-  "name": "js-stellar-elements",
+  "name": "@stellar/elements",
   "version": "0.0.0",
   "description": "Styled elements for use on Stellar projects",
   "main": "dist/index.js",
