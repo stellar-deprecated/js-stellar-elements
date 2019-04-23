@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import { Button, Input, Checkbox } from "../src/index";
+import { GlobalStyle, Button, Input, Checkbox } from "../src/index";
 
 function CheckboxWrapper({ isCheckedAtStart, ...props }) {
   const [isChecked, setChecked] = useState(isCheckedAtStart);
@@ -29,9 +29,37 @@ function InputWrapper({ valueAtStart, ...props }) {
   );
 }
 
-storiesOf("Form elements", module)
+storiesOf("Elements", module)
+  .add("GlobalStyle", () => (
+    <>
+      <GlobalStyle />
+      <h1>This is an H1</h1>
+      <p>This is a very nice and good paragraph.</p>
+
+      <blockquote>…nice and good…</blockquote>
+
+      <p>
+        Some <strong>good ways</strong> it is nice:
+      </p>
+
+      <ul>
+        <li>Nice beginning</li>
+        <li>Good end</li>
+        <li>Middle ok</li>
+      </ul>
+
+      <p>What we plan to do to make it better / nicer:</p>
+
+      <ol>
+        <li>Make middle nicer</li>
+        <li>Make middle better</li>
+        <li>Make middle good</li>
+      </ol>
+    </>
+  ))
   .add("Button", () => (
     <>
+      <GlobalStyle />
       <h2>Normal</h2>
       <Button onClick={action("clicked")}>Mark button as clicked</Button>
       <h2>Disabled</h2>
@@ -42,6 +70,7 @@ storiesOf("Form elements", module)
   ))
   .add("Checkbox", () => (
     <>
+      <GlobalStyle />
       <h2>Normal</h2>
 
       <CheckboxWrapper label="This is a really cool label, and good" />
@@ -68,6 +97,7 @@ storiesOf("Form elements", module)
   ))
   .add("Input", () => (
     <>
+      <GlobalStyle />
       <h2>Normal</h2>
       <InputWrapper type="text" valueAtStart="This is a v good input" />
       <h2>Empty</h2>
