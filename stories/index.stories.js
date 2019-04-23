@@ -34,7 +34,9 @@ storiesOf("Elements", module)
     <>
       <GlobalStyle />
       <h1>This is an H1</h1>
-      <p>This is a very nice and good paragraph.</p>
+      <p>
+        This is a <em>very nice and good</em> paragraph.
+      </p>
 
       <blockquote>…nice and good…</blockquote>
 
