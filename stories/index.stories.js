@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
-import { GlobalStyle, Button, Input, Checkbox } from "../src/index";
+import {
+  GlobalStyle,
+  Button,
+  ButtonThemes,
+  Input,
+  Checkbox,
+} from "../src/index";
 
 function CheckboxWrapper({ isCheckedAtStart, ...props }) {
   const [isChecked, setChecked] = useState(isCheckedAtStart);
@@ -67,6 +73,7 @@ storiesOf("Elements", module)
       <Button
         onClick={() => console.log("This button IS clickable!!!")}
         disabled={boolean("Disabled", false)}
+        theme={select("Theme", Object.keys(ButtonThemes), ButtonThemes.primary)}
       >
         Click button
       </Button>
