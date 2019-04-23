@@ -82,7 +82,7 @@ storiesOf("Elements", module)
         Click button
       </Button>
 
-      <h2>Other exports</h2>
+      <h2>Related exports</h2>
 
       <p>`ButtonThemes`: {Object.keys(ButtonThemes).join(", ")}</p>
     </>
