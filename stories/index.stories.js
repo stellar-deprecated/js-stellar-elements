@@ -81,6 +81,10 @@ storiesOf("Elements", module)
       >
         Click button
       </Button>
+
+      <h2>Other exports</h2>
+
+      <p>`ButtonThemes`: {Object.keys(ButtonThemes).join(", ")}</p>
     </>
   ))
   .add("Checkbox", () => (
@@ -116,5 +120,9 @@ storiesOf("Elements", module)
         disabled={boolean("disabled", false)}
         resizing={select("`resizing`", Object.keys(TextareaResizing), "yes")}
       />
+
+      <h2>Related exports</h2>
+
+      <p>`TextareaResizing`: {Object.keys(TextareaResizing).join(", ")}</p>
     </>
   ));
