@@ -8,6 +8,8 @@ export const Input = styled.input`
 
   outline: none;
 
+  padding: 5px 8px;
+
   &:focus {
     ${Outline};
   }
