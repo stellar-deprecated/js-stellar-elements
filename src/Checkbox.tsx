@@ -3,15 +3,21 @@ import styled from "styled-components";
 
 const Label = styled.label``;
 
+const LabelText = styled.span`
+  vertical-align: middle;
+`;
+
 const Input = styled.input`
   display: none;
 `;
 
 interface CheckProps {
   readonly isChecked: boolean;
+  readonly isLabelFirst: boolean;
 }
 
 const Check = styled.span<CheckProps>`
+  vertical-align: middle;
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -20,6 +26,9 @@ const Check = styled.span<CheckProps>`
   text-align: center;
   line-height: 20px;
   cursor: pointer;
+
+  margin-left: ${(props) => props.isLabelFirst && "10px"};
+  margin-right: ${(props) => !props.isLabelFirst && "10px"};
 
   &:after {
     content: "✓";
@@ -41,10 +50,10 @@ export const Checkbox: React.SFC<CheckboxProps> = ({
 }) => {
   return (
     <Label>
-      {labelFirst && label}
+      {labelFirst && <LabelText>{label}</LabelText>}
       <Input type="checkbox" {...props} checked={checked} />
-      <Check isChecked={checked} />
-      {!labelFirst && label}
+      <Check isChecked={checked} isLabelFirst={labelFirst} />
+      {!labelFirst && <LabelText>{label}</LabelText>}
     </Label>
   );
 };
