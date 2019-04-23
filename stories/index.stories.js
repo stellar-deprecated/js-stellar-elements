@@ -8,6 +8,8 @@ import {
   Button,
   ButtonThemes,
   Input,
+  Textarea,
+  TextareaResizing,
   Checkbox,
 } from "../src/index";
 
@@ -23,15 +25,13 @@ function CheckboxWrapper({ isCheckedAtStart, ...props }) {
   );
 }
 
-function InputWrapper({ valueAtStart, ...props }) {
+function InputWrapper({ isTextarea, valueAtStart, ...props }) {
   const [value, setValue] = useState(valueAtStart);
 
+  const El = isTextarea ? Textarea : Input;
+
   return (
-    <Input
-      {...props}
-      value={value}
-      onChange={(ev) => setValue(ev.target.value)}
-    />
+    <El {...props} value={value} onChange={(ev) => setValue(ev.target.value)} />
   );
 }
 
@@ -72,8 +72,12 @@ storiesOf("Elements", module)
 
       <Button
         onClick={() => console.log("This button IS clickable!!!")}
-        disabled={boolean("Disabled", false)}
-        theme={select("Theme", Object.keys(ButtonThemes), ButtonThemes.primary)}
+        disabled={boolean("`disabled`", false)}
+        theme={select(
+          "`theme`",
+          Object.keys(ButtonThemes),
+          ButtonThemes.primary,
+        )}
       >
         Click button
       </Button>
@@ -86,8 +90,8 @@ storiesOf("Elements", module)
       <CheckboxWrapper
         label={text("Label text", "This is a really cool label, and good")}
         isCheckedAtStart={false}
-        disabled={boolean("Disabled", false)}
-        labelFirst={boolean("Place label first", false)}
+        disabled={boolean("`disabled`", false)}
+        labelFirst={boolean("`labelFirst`", false)}
       />
     </>
   ))
@@ -98,7 +102,19 @@ storiesOf("Elements", module)
       <InputWrapper
         type="text"
         valueAtStart="Some really good text"
-        disabled={boolean("Disabled", false)}
+        disabled={boolean("disabled", false)}
+      />
+    </>
+  ))
+  .add("Textarea", () => (
+    <>
+      <GlobalStyle />
+
+      <InputWrapper
+        isTextarea={true}
+        valueAtStart="Some really good text that's so long that we need a big box to hold it all"
+        disabled={boolean("disabled", false)}
+        resizing={select("`resizing`", Object.keys(TextareaResizing), "yes")}
       />
     </>
   ));
