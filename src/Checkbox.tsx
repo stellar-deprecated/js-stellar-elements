@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import { Outline } from "./shared";
+
 const Label = styled.label`
   position: relative;
 
@@ -41,7 +43,7 @@ const Check = styled.span<CheckProps>`
 
   ${Label}:focus &,
   ${Input}:focus + & {
-    box-shadow: 0 3px 5px rgba(0, 0, 255, 0.3);
+    ${Outline};
   }
 
   ${Label}:hover & {

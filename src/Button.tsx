@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import color from "color";
 
+import { Outline } from "./shared";
+
 export enum ButtonThemes {
   primary = "primary",
   secondary = "secondary",
@@ -39,7 +41,7 @@ export const Button = styled.button<ButtonProps>`
   outline: none;
 
   &:focus {
-    box-shadow: 0 3px 5px rgba(0, 0, 255, 0.3);
+    ${Outline};
   }
 
   &:hover {
