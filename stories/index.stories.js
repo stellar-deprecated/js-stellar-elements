@@ -11,6 +11,7 @@ import {
   Textarea,
   TextareaResizing,
   Checkbox,
+  Select,
 } from "../src/index";
 
 function CheckboxWrapper({ isCheckedAtStart, ...props }) {
@@ -32,6 +33,23 @@ function InputWrapper({ isTextarea, valueAtStart, ...props }) {
 
   return (
     <El {...props} value={value} onChange={(ev) => setValue(ev.target.value)} />
+  );
+}
+
+function SelectWrapper({ valueAtStart, placeholder, values, ...props }) {
+  const [value, setValue] = useState(valueAtStart);
+
+  return (
+    <Select
+      {...props}
+      value={value}
+      onChange={(ev) => setValue(ev.target.value)}
+    >
+      <option value="">{placeholder}</option>
+      {values.map(({ value, label }) => (
+        <option value={value}>{label}</option>
+      ))}
+    </Select>
   );
 }
 
@@ -97,6 +115,11 @@ storiesOf("Elements", module)
         disabled={boolean("`disabled`", false)}
         labelFirst={boolean("`labelFirst`", false)}
       />
+
+      <p>
+        Note: `Checkbox` outputs a React component, <em>not</em> a
+        styled-component element.
+      </p>
     </>
   ))
   .add("Input", () => (
@@ -106,6 +129,21 @@ storiesOf("Elements", module)
       <InputWrapper
         type="text"
         valueAtStart="Some really good text"
+        disabled={boolean("disabled", false)}
+      />
+    </>
+  ))
+  .add("Select", () => (
+    <>
+      <GlobalStyle />
+
+      <SelectWrapper
+        valueAtStart=""
+        placeholder="-- Pick one of these to hodl --"
+        values={[
+          { value: "a", label: "Bird in hand" },
+          { value: "b", label: "Two birds in bush" },
+        ]}
         disabled={boolean("disabled", false)}
       />
     </>
