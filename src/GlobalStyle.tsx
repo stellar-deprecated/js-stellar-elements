@@ -9,4 +9,15 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 18px;
     line-height: 28px;
   }
+
+  body,
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
 `;
