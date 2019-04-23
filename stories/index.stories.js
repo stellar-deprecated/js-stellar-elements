@@ -115,6 +115,11 @@ storiesOf("Elements", module)
         disabled={boolean("`disabled`", false)}
         labelFirst={boolean("`labelFirst`", false)}
       />
+
+      <p>
+        Note: `Checkbox` outputs a React component, <em>not</em> a
+        styled-component element.
+      </p>
     </>
   ))
   .add("Input", () => (
