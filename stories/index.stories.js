@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 import { GlobalStyle, Button, Input, Checkbox } from "../src/index";
 
@@ -30,6 +30,7 @@ function InputWrapper({ valueAtStart, ...props }) {
 }
 
 storiesOf("Elements", module)
+  .addDecorator(withKnobs)
   .add("GlobalStyle", () => (
     <>
       <GlobalStyle />
@@ -62,53 +63,35 @@ storiesOf("Elements", module)
   .add("Button", () => (
     <>
       <GlobalStyle />
-      <h2>Normal</h2>
-      <Button onClick={action("clicked")}>Mark button as clicked</Button>
-      <h2>Disabled</h2>
-      <Button onClick={action("clicked")} disabled>
-        Mark button as clicked
+
+      <Button
+        onClick={() => console.log("This button IS clickable!!!")}
+        disabled={boolean("Disabled", false)}
+      >
+        Click button
       </Button>
     </>
   ))
   .add("Checkbox", () => (
     <>
       <GlobalStyle />
-      <h2>Normal</h2>
-
-      <CheckboxWrapper label="This is a really cool label, and good" />
-
-      <h2>Checked</h2>
 
       <CheckboxWrapper
-        label="This is a really cool label, and good"
-        isCheckedAtStart
-      />
-
-      <h2>Disabled</h2>
-
-      <CheckboxWrapper label="This is a really cool label, and good" disabled />
-
-      <h2>Label first</h2>
-
-      <CheckboxWrapper
-        label="This is a really cool label, and good"
-        labelFirst
-        disabled
+        label={text("Label text", "This is a really cool label, and good")}
+        isCheckedAtStart={false}
+        disabled={boolean("Disabled", false)}
+        labelFirst={boolean("Place label first", false)}
       />
     </>
   ))
   .add("Input", () => (
     <>
       <GlobalStyle />
-      <h2>Normal</h2>
-      <InputWrapper type="text" valueAtStart="This is a v good input" />
-      <h2>Empty</h2>
-      <InputWrapper type="text" valueAtStart="" />
-      <h2>Disabled</h2>
+
       <InputWrapper
         type="text"
-        valueAtStart="This is a v good input"
-        disabled
+        valueAtStart="Some really good text"
+        disabled={boolean("Disabled", false)}
       />
     </>
   ));
