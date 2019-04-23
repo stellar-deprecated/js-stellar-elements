@@ -22,11 +22,15 @@ storiesOf("Form elements", module)
 
       <Checkbox label="This is a really cool label, and good" />
 
+      <h2>Checked</h2>
+
+      <Checkbox label="This is a really cool label, and good" checked />
+
       <h2>Disabled</h2>
 
       <Checkbox label="This is a really cool label, and good" disabled />
 
-      <h2>Labelfirst</h2>
+      <h2>Label first</h2>
 
       <Checkbox
         label="This is a really cool label, and good"
