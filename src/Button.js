@@ -4,6 +4,21 @@ import PropTypes from "prop-types";
 
 import { Outline } from "./shared";
 
+const ButtonColors = {
+  primary: {
+    background: "green",
+    color: "white",
+  },
+  secondary: {
+    background: "blue",
+    color: "white",
+  },
+  tertiary: {
+    background: "white",
+    color: "black",
+  },
+};
+
 /** @component */
 export const Button = styled.button`
   background: ${(props) => ButtonColors[props.level].background};
@@ -44,21 +59,6 @@ Button.Levels = {
   primary: "primary",
   secondary: "secondary",
   tertiary: "tertiary",
-};
-
-const ButtonColors = {
-  [Button.Levels.primary]: {
-    background: "green",
-    color: "white",
-  },
-  [Button.Levels.secondary]: {
-    background: "blue",
-    color: "white",
-  },
-  [Button.Levels.tertiary]: {
-    background: "white",
-    color: "black",
-  },
 };
 
 Button.defaultProps = {
