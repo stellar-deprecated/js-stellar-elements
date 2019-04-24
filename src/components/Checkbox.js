@@ -82,7 +82,6 @@ export const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  checked: false,
   isLabelFirst: false,
 };
 

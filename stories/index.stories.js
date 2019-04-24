@@ -10,7 +10,6 @@ import {
   Button,
   Input,
   Textarea,
-  TextareaResizing,
   Checkbox,
   Select,
 } from "../src/index";
@@ -152,6 +151,6 @@ storiesOf("Elements", module)
       isTextarea={true}
       valueAtStart="Some really good text that's so long that we need a big box to hold it all"
       disabled={boolean("disabled", false)}
-      resizing={select("`resizing`", Object.keys(TextareaResizing), "yes")}
+      resize={select("`resize`", Object.keys(Textarea.Resize), "yes")}
     />
   ));
