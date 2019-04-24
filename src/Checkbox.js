@@ -7,6 +7,13 @@ import { Outline } from "./shared";
 const Label = styled.label`
   position: relative;
 
+  ${(props) =>
+    props.isFullWidth &&
+    `
+    display: flex;
+    justify-content: space-between;
+  `};
+
   &:hover {
     cursor: pointer;
   }
@@ -52,23 +59,38 @@ const Check = styled.span`
   }
 `;
 
-export const Checkbox = ({ label, labelFirst, checked, ...props }) => {
+/**
+ * @component
+ * Note: unlike most other elements, this is a React component, not a
+ * styled-component.
+ */
+export const Checkbox = ({
+  label,
+  isLabelFirst,
+  isFullWidth,
+  checked,
+  ...props
+}) => {
   return (
-    <Label>
-      {labelFirst && <LabelText>{label}</LabelText>}
+    <Label isFullWidth={isFullWidth}>
+      {isLabelFirst && <LabelText>{label}</LabelText>}
       <Input type="checkbox" {...props} checked={checked} />
-      <Check isChecked={checked} isLabelFirst={labelFirst} />
-      {!labelFirst && <LabelText>{label}</LabelText>}
+      <Check isChecked={checked} isLabelFirst={isLabelFirst} />
+      {!isLabelFirst && <LabelText>{label}</LabelText>}
     </Label>
   );
 };
 
 Checkbox.defaultProps = {
   checked: false,
-  labelFirst: false,
+  isLabelFirst: false,
 };
 
 Checkbox.propTypes = {
+  /** @ignore */
   checked: PropTypes.bool,
-  labelFirst: PropTypes.bool,
+  /** If true, the label will appear to the left of the checkbox. */
+  isLabelFirst: PropTypes.bool,
+  /** If true, take up the full width and justify the contents.*/
+  isFullWidth: PropTypes.bool,
 };

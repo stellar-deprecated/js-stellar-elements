@@ -126,7 +126,7 @@ storiesOf("Elements", module)
       label={text("Label text", "This is a really cool label, and good")}
       isCheckedAtStart={false}
       disabled={boolean("`disabled`", false)}
-      labelFirst={boolean("`labelFirst`", false)}
+      isLabelFirst={boolean("`isLabelFirst`", false)}
     />
   ))
   .add("Input", () => (
