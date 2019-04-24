@@ -6,7 +6,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import {
   GlobalStyle,
   Button,
-  ButtonThemes,
+  ButtonLevels,
   Input,
   Textarea,
   TextareaResizing,
@@ -91,10 +91,10 @@ storiesOf("Elements", module)
       <Button
         onClick={() => console.log("This button IS clickable!!!")}
         disabled={boolean("`disabled`", false)}
-        theme={select(
-          "`theme`",
-          Object.keys(ButtonThemes),
-          ButtonThemes.primary,
+        level={select(
+          "`level`",
+          Object.keys(ButtonLevels),
+          ButtonLevels.primary,
         )}
       >
         Click button
@@ -102,7 +102,7 @@ storiesOf("Elements", module)
 
       <h2>Related exports</h2>
 
-      <p>`ButtonThemes`: {Object.keys(ButtonThemes).join(", ")}</p>
+      <p>`ButtonLevels`: {Object.keys(ButtonLevels).join(", ")}</p>
     </>
   ))
   .add("Checkbox", () => (

@@ -3,38 +3,38 @@ import color from "color";
 
 import { Outline } from "./shared";
 
-export enum ButtonThemes {
+export enum ButtonLevels {
   primary = "primary",
   secondary = "secondary",
   tertiary = "tertiary",
 }
 
 interface ButtonProps {
-  readonly theme:
-    | ButtonThemes.primary
-    | ButtonThemes.secondary
-    | ButtonThemes.tertiary;
+  readonly level:
+    | ButtonLevels.primary
+    | ButtonLevels.secondary
+    | ButtonLevels.tertiary;
   readonly isLabelFirst: boolean;
 }
 
 const ButtonColors: any = {
-  [ButtonThemes.primary]: {
+  [ButtonLevels.primary]: {
     background: "green",
     color: "white",
   },
-  [ButtonThemes.secondary]: {
+  [ButtonLevels.secondary]: {
     background: "blue",
     color: "white",
   },
-  [ButtonThemes.tertiary]: {
+  [ButtonLevels.tertiary]: {
     background: "white",
     color: "black",
   },
 };
 
 export const Button = styled.button<ButtonProps>`
-  background: ${(props) => ButtonColors[props.theme].background};
-  color: ${(props) => ButtonColors[props.theme].color};
+  background: ${(props) => ButtonColors[props.level].background};
+  color: ${(props) => ButtonColors[props.level].color};
   border: none;
   border-radius: 2px;
   padding: 5px 10px;
@@ -46,14 +46,14 @@ export const Button = styled.button<ButtonProps>`
 
   &:hover {
     background: ${(props) =>
-      color(ButtonColors[props.theme].background)
+      color(ButtonColors[props.level].background)
         .alpha(0.9)
         .toString()};
   }
 
   &:active {
     background: ${(props) =>
-      color(ButtonColors[props.theme].background)
+      color(ButtonColors[props.level].background)
         .lighten(0.3)
         .saturate(0.3)
         .toString()};
@@ -61,7 +61,7 @@ export const Button = styled.button<ButtonProps>`
 
   &:disabled {
     background: ${(props) =>
-      color(ButtonColors[props.theme].background)
+      color(ButtonColors[props.level].background)
         .alpha(0.5)
         .toString()};
   }
