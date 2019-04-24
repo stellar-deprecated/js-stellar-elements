@@ -2,7 +2,7 @@ import styled from "styled-components";
 import color from "color";
 import PropTypes from "prop-types";
 
-import { Outline } from "./shared";
+import { Outline } from "../shared";
 
 const ButtonColors = {
   primary: {

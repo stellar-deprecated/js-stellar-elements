@@ -1,6 +1,6 @@
-export { Button } from "./Button";
-export { Input } from "./Input";
-export { Select } from "./Select";
-export { Checkbox } from "./Checkbox";
-export { Textarea, TextareaResizing } from "./Textarea";
-export { GlobalStyle } from "./GlobalStyle";
+export { Button } from "./components/Button";
+export { Input } from "./components/Input";
+export { Select } from "./components/Select";
+export { Checkbox } from "./components/Checkbox";
+export { Textarea, TextareaResizing } from "./components/Textarea";
+export { GlobalStyle } from "./components/GlobalStyle";

@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { Outline } from "./shared";
+import { Outline } from "../shared";
 
 const Label = styled.label`
   position: relative;
