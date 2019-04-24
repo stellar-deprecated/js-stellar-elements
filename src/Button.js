@@ -1,32 +1,10 @@
 import styled from "styled-components";
 import color from "color";
+import PropTypes from "prop-types";
+
 import { Outline } from "./shared";
 
-export const ButtonLevels = {
-  primary: "primary",
-  secondary: "secondary",
-  tertiary: "tertiary",
-};
-
-const ButtonColors = {
-  [ButtonLevels.primary]: {
-    background: "green",
-    color: "white",
-  },
-  [ButtonLevels.secondary]: {
-    background: "blue",
-    color: "white",
-  },
-  [ButtonLevels.tertiary]: {
-    background: "white",
-    color: "black",
-  },
-};
-
-/**
- * This is a button, and is good.
- * @param {string} level The level of hierarchy of the button.
- */
+/** @component */
 export const Button = styled.button`
   background: ${(props) => ButtonColors[props.level].background};
   color: ${(props) => ButtonColors[props.level].color};
@@ -62,22 +40,39 @@ export const Button = styled.button`
   }
 `;
 
-Button.defaultProps = {
-  level: ButtonLevels.primary,
+Button.Levels = {
+  primary: "primary",
+  secondary: "secondary",
+  tertiary: "tertiary",
 };
 
-Button.__docs = `
-  # Button
+const ButtonColors = {
+  [Button.Levels.primary]: {
+    background: "green",
+    color: "white",
+  },
+  [Button.Levels.secondary]: {
+    background: "blue",
+    color: "white",
+  },
+  [Button.Levels.tertiary]: {
+    background: "white",
+    color: "black",
+  },
+};
 
-  This is a very clickable and tappable button.
+Button.defaultProps = {
+  level: Button.Levels.primary,
+};
 
-  # Properties
-
-  ## level
-  
-  Type: \`ButtonLevels.primary\` | \`ButtonLevels.secondary\` | \`ButtonLevels.tertiary\`
-
-  Default: \`ButtonLevels.primary\`
-
-  Use the export \`ButtonLevels\` to set these types.
-`;
+Button.propTypes = {
+  /**
+   * The type of button to show. Don't pass a string; use the object
+   * `Button.Levels` to pass a named constant.
+   */
+  level: PropTypes.oneOf([
+    Button.Levels.primary,
+    Button.Levels.secondary,
+    Button.Levels.tertiary,
+  ]),
+};

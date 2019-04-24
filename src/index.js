@@ -1,4 +1,4 @@
-export { Button, ButtonLevels } from "./Button";
+export { Button } from "./Button";
 export { Input } from "./Input";
 export { Select } from "./Select";
 export { Checkbox } from "./Checkbox";
