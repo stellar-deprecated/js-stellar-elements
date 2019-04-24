@@ -38,6 +38,7 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "react-styleguidist": "^9.0.8",
+    "styleguidist-knobs": "^0.1.4",
     "webpack": "^4.30.0"
   },
   "scripts": {

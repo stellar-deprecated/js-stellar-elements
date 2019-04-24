@@ -9206,6 +9206,11 @@ styled-components@^4.2.0:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styleguidist-knobs@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/styleguidist-knobs/-/styleguidist-knobs-0.1.4.tgz#58642a77de9ff929bc5914158a14720d4a599692"
+  integrity sha512-owOqqf9qM7/21/tuoS+MiqnQsG8dgKqBhhzfp3WvvHlBTmSQ1CPrzqPvZ6jDQ8d5a0laX+gOkrgao79ZLYo+dg==
+
 stylis-rule-sheet@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"

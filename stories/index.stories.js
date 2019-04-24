@@ -8,7 +8,6 @@ import { withInfo } from "@storybook/addon-info";
 import {
   GlobalStyle,
   Button,
-  ButtonLevels,
   Input,
   Textarea,
   TextareaResizing,
@@ -109,8 +108,8 @@ storiesOf("Elements", module)
         disabled={boolean("`disabled`", false)}
         level={select(
           "`level`",
-          Object.keys(ButtonLevels),
-          ButtonLevels.primary,
+          Object.keys(Button.Levels),
+          Button.Levels.primary,
         )}
       >
         Click button
