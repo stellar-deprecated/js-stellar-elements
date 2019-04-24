@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import { withInfo } from "@storybook/addon-info";
 
 import {
   GlobalStyle,
@@ -54,10 +55,25 @@ function SelectWrapper({ valueAtStart, placeholder, values, ...props }) {
 }
 
 storiesOf("Elements", module)
+  .addDecorator(withInfo)
   .addDecorator(withKnobs)
-  .add("GlobalStyle", () => (
+  .addDecorator((story) => (
     <>
       <GlobalStyle />
+      {story()}
+    </>
+  ))
+  .addParameters({
+    options: {
+      panelPosition: "right",
+    },
+    info: {
+      inline: true,
+      source: false,
+    },
+  })
+  .add("GlobalStyle", () => (
+    <>
       <h1>This is an H1</h1>
       <p>
         This is a <em>very nice and good</em> paragraph.
@@ -84,10 +100,9 @@ storiesOf("Elements", module)
       </ol>
     </>
   ))
-  .add("Button", () => (
-    <>
-      <GlobalStyle />
-
+  .add(
+    "Button",
+    () => (
       <Button
         onClick={() => console.log("This button IS clickable!!!")}
         disabled={boolean("`disabled`", false)}
@@ -99,68 +114,44 @@ storiesOf("Elements", module)
       >
         Click button
       </Button>
-
-      <h2>Related exports</h2>
-
-      <p>`ButtonLevels`: {Object.keys(ButtonLevels).join(", ")}</p>
-    </>
-  ))
+    ),
+    {
+      info: {
+        propTables: [Button],
+      },
+    },
+  )
   .add("Checkbox", () => (
-    <>
-      <GlobalStyle />
-
-      <CheckboxWrapper
-        label={text("Label text", "This is a really cool label, and good")}
-        isCheckedAtStart={false}
-        disabled={boolean("`disabled`", false)}
-        labelFirst={boolean("`labelFirst`", false)}
-      />
-
-      <p>
-        Note: `Checkbox` outputs a React component, <em>not</em> a
-        styled-component element.
-      </p>
-    </>
+    <CheckboxWrapper
+      label={text("Label text", "This is a really cool label, and good")}
+      isCheckedAtStart={false}
+      disabled={boolean("`disabled`", false)}
+      labelFirst={boolean("`labelFirst`", false)}
+    />
   ))
   .add("Input", () => (
-    <>
-      <GlobalStyle />
-
-      <InputWrapper
-        type="text"
-        valueAtStart="Some really good text"
-        disabled={boolean("disabled", false)}
-      />
-    </>
+    <InputWrapper
+      type="text"
+      valueAtStart="Some really good text"
+      disabled={boolean("disabled", false)}
+    />
   ))
   .add("Select", () => (
-    <>
-      <GlobalStyle />
-
-      <SelectWrapper
-        valueAtStart=""
-        placeholder="-- Pick one of these to hodl --"
-        values={[
-          { value: "a", label: "Bird in hand" },
-          { value: "b", label: "Two birds in bush" },
-        ]}
-        disabled={boolean("disabled", false)}
-      />
-    </>
+    <SelectWrapper
+      valueAtStart=""
+      placeholder="-- Pick one of these to hodl --"
+      values={[
+        { value: "a", label: "Bird in hand" },
+        { value: "b", label: "Two birds in bush" },
+      ]}
+      disabled={boolean("disabled", false)}
+    />
   ))
   .add("Textarea", () => (
-    <>
-      <GlobalStyle />
-
-      <InputWrapper
-        isTextarea={true}
-        valueAtStart="Some really good text that's so long that we need a big box to hold it all"
-        disabled={boolean("disabled", false)}
-        resizing={select("`resizing`", Object.keys(TextareaResizing), "yes")}
-      />
-
-      <h2>Related exports</h2>
-
-      <p>`TextareaResizing`: {Object.keys(TextareaResizing).join(", ")}</p>
-    </>
+    <InputWrapper
+      isTextarea={true}
+      valueAtStart="Some really good text that's so long that we need a big box to hold it all"
+      disabled={boolean("disabled", false)}
+      resizing={select("`resizing`", Object.keys(TextareaResizing), "yes")}
+    />
   ));

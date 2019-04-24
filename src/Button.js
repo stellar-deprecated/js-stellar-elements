@@ -3,21 +3,13 @@ import color from "color";
 
 import { Outline } from "./shared";
 
-export enum ButtonLevels {
-  primary = "primary",
-  secondary = "secondary",
-  tertiary = "tertiary",
-}
+export const ButtonLevels = {
+  primary: "primary",
+  secondary: "secondary",
+  tertiary: "tertiary",
+};
 
-interface ButtonProps {
-  readonly level:
-    | ButtonLevels.primary
-    | ButtonLevels.secondary
-    | ButtonLevels.tertiary;
-  readonly isLabelFirst: boolean;
-}
-
-const ButtonColors: any = {
+const ButtonColors = {
   [ButtonLevels.primary]: {
     background: "green",
     color: "white",
@@ -32,7 +24,7 @@ const ButtonColors: any = {
   },
 };
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button`
   background: ${(props) => ButtonColors[props.level].background};
   color: ${(props) => ButtonColors[props.level].color};
   border: none;

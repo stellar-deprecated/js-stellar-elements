@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import { Outline } from "./shared";
 
@@ -22,12 +23,7 @@ const Input = styled.input`
   height: 1px;
 `;
 
-interface CheckProps {
-  readonly isChecked: boolean;
-  readonly isLabelFirst: boolean;
-}
-
-const Check = styled.span<CheckProps>`
+const Check = styled.span`
   vertical-align: middle;
   display: inline-block;
   width: 20px;
@@ -56,18 +52,7 @@ const Check = styled.span<CheckProps>`
   }
 `;
 
-interface CheckboxProps {
-  label: React.ReactNode;
-  labelFirst: boolean;
-  checked: boolean;
-}
-
-export const Checkbox: React.SFC<CheckboxProps> = ({
-  label,
-  labelFirst,
-  checked,
-  ...props
-}) => {
+export const Checkbox = ({ label, labelFirst, checked, ...props }) => {
   return (
     <Label>
       {labelFirst && <LabelText>{label}</LabelText>}
@@ -81,4 +66,9 @@ export const Checkbox: React.SFC<CheckboxProps> = ({
 Checkbox.defaultProps = {
   checked: false,
   labelFirst: false,
+};
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  labelFirst: PropTypes.bool,
 };
