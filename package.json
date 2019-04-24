@@ -44,7 +44,9 @@
   "scripts": {
     "storybook": "NODE_PATH=src && start-storybook -p 6006",
     "prettier": "prettier --config prettier.config.js --write '**/*.{js,md}'",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "dev": "styleguidist server",
+    "build": "styleguidist build"
   },
   "peerDependencies": {
     "react": "^16.8.6"
