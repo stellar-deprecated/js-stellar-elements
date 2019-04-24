@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import React, { useState } from "react";
 
 import { storiesOf } from "@storybook/react";
@@ -117,7 +118,7 @@ storiesOf("Elements", module)
     ),
     {
       info: {
-        propTables: [Button],
+        text: Button.__docs,
       },
     },
   )
