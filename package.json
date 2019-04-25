@@ -46,7 +46,7 @@
     "prettier": "prettier --config prettier.config.js --write '**/*.{js,md}'",
     "build-storybook": "build-storybook",
     "dev": "styleguidist server",
-    "build": "styleguidist build"
+    "build-docs": "styleguidist build"
   },
   "peerDependencies": {
     "react": "^16.8.6"
