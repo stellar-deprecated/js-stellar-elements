@@ -1,31 +1,31 @@
 ```jsx
 <p>
-  <Button.Button
+  <Button
     onClick={() => console.log("This button IS clickable!!!")}
     disabled={false}
-    level={Button.Button.Levels.primary}
+    level={Button.Levels.primary}
   >
     Button.Levels.primary
-  </Button.Button>
+  </Button>
 </p>
 
 <p>
-  <Button.Button
+  <Button
     onClick={() => console.log("This button IS clickable!!!")}
     disabled={false}
-    level={Button.Button.Levels.secondary}
+    level={Button.Levels.secondary}
   >
     Button.Levels.secondary
-  </Button.Button>
+  </Button>
 </p>
 
 <p>
-  <Button.Button
+  <Button
     onClick={() => console.log("This button IS clickable!!!")}
     disabled={false}
-    level={Button.Button.Levels.tertiary}
+    level={Button.Levels.tertiary}
   >
     Button.Levels.tertiary
-  </Button.Button>
+  </Button>
 </p>
 ```

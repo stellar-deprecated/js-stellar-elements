@@ -19,8 +19,7 @@ const ButtonColors = {
   },
 };
 
-/** @component */
-export const Button = styled.button`
+const Button = styled.button`
   background: ${(props) => ButtonColors[props.level].background};
   color: ${(props) => ButtonColors[props.level].color};
   border: none;
@@ -76,3 +75,6 @@ Button.propTypes = {
     Button.Levels.tertiary,
   ]),
 };
+
+/** @component */
+export default Button;

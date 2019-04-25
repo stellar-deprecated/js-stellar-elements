@@ -1,5 +1,5 @@
 ```jsx
-<GlobalStyle.GlobalStyle />
+<GlobalStyle />
 
 <h1>This is an H1</h1>
 <p>

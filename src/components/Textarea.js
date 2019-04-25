@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { Input } from "./Input";
+import Input from "./Input";
 
-/** @component */
-export const Textarea = styled(Input.withComponent("textarea"))`
+const Textarea = styled(Input.withComponent("textarea"))`
   resize: ${(props) => props.resize};
 `;
 
@@ -27,3 +26,6 @@ Textarea.propTypes = {
     Textarea.Resize.horizontal,
   ]),
 };
+
+/** @component */
+export default Textarea;
