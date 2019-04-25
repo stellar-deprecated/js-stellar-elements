@@ -39,6 +39,9 @@ jobs:
       # test
       - run: yarn test
 
+      # build
+      - run: yarn build
+
       - persist_to_workspace:
           root: ~/repo
           paths: .
