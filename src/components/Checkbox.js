@@ -1,10 +1,18 @@
 import * as React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import { Outline } from "./shared";
+import { Outline } from "../shared";
 
 const Label = styled.label`
   position: relative;
+
+  ${(props) =>
+    props.isFullWidth &&
+    `
+    display: flex;
+    justify-content: space-between;
+  `};
 
   &:hover {
     cursor: pointer;
@@ -22,12 +30,7 @@ const Input = styled.input`
   height: 1px;
 `;
 
-interface CheckProps {
-  readonly isChecked: boolean;
-  readonly isLabelFirst: boolean;
-}
-
-const Check = styled.span<CheckProps>`
+const Check = styled.span`
   vertical-align: middle;
   display: inline-block;
   width: 20px;
@@ -56,29 +59,34 @@ const Check = styled.span<CheckProps>`
   }
 `;
 
-interface CheckboxProps {
-  label: React.ReactNode;
-  labelFirst: boolean;
-  checked: boolean;
-}
-
-export const Checkbox: React.SFC<CheckboxProps> = ({
-  label,
-  labelFirst,
-  checked,
-  ...props
-}) => {
+/**
+ * Note: unlike most other elements, this is a React component, not a
+ * styled-component.
+ */
+const Checkbox = ({ label, isLabelFirst, isFullWidth, checked, ...props }) => {
   return (
-    <Label>
-      {labelFirst && <LabelText>{label}</LabelText>}
+    <Label isFullWidth={isFullWidth}>
+      {isLabelFirst && <LabelText>{label}</LabelText>}
       <Input type="checkbox" {...props} checked={checked} />
-      <Check isChecked={checked} isLabelFirst={labelFirst} />
-      {!labelFirst && <LabelText>{label}</LabelText>}
+      <Check isChecked={checked} isLabelFirst={isLabelFirst} />
+      {!isLabelFirst && <LabelText>{label}</LabelText>}
     </Label>
   );
 };
 
 Checkbox.defaultProps = {
-  checked: false,
-  labelFirst: false,
+  isLabelFirst: false,
 };
+
+Checkbox.propTypes = {
+  /** @ignore */
+  checked: PropTypes.bool,
+  label: PropTypes.string,
+  /** If true, the label will appear to the left of the checkbox. */
+  isLabelFirst: PropTypes.bool,
+  /** If true, take up the full width and justify the contents.*/
+  isFullWidth: PropTypes.bool,
+};
+
+/** @component */
+export default Checkbox;
