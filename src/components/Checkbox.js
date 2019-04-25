@@ -81,6 +81,7 @@ Checkbox.defaultProps = {
 Checkbox.propTypes = {
   /** @ignore */
   checked: PropTypes.bool,
+  label: PropTypes.string,
   /** If true, the label will appear to the left of the checkbox. */
   isLabelFirst: PropTypes.bool,
   /** If true, take up the full width and justify the contents.*/
