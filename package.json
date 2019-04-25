@@ -47,9 +47,9 @@
     "prettier": "prettier --config prettier.config.js --write '**/*.{js,md}'",
     "prettier:check": "prettier --config prettier.config.js --check '**/*.{js,md}'",
     "eslint": "eslint .",
-    "dev": "styleguidist server",
+    "dev": "NODE_ENV=documentation styleguidist server",
     "build": "NODE_ENV=production webpack",
-    "build-docs": "styleguidist build"
+    "build-docs": "NODE_ENV=documentation styleguidist build"
   },
   "peerDependencies": {
     "react": "^16.8.6"
