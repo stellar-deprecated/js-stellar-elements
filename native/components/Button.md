@@ -2,7 +2,7 @@
 import { View } from "react-native";
 import Text from "./Text";
 
-<View>
+<>
   <View style={{ marginBottom: 20 }}>
     <Button
       onPress={() => console.log("This button IS clickable!!!")}
@@ -32,5 +32,5 @@ import Text from "./Text";
       <Text>Button.Levels.tertiary</Text>
     </Button>
   </View>
-</View>;
+</>;
 ```
