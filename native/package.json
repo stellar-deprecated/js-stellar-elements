@@ -1,0 +1,5 @@
+{
+  "name": "@stellar/elements/native",
+  "private": true,
+  "main": "dist/stellar-elements.native.js"
+}
