@@ -1,5 +1,14 @@
 module.exports = {
-  components: ["src/components/*.js", "native/components/*.js"],
+  sections: [
+    {
+      name: "Desktop",
+      components: "src/components/*.js",
+    },
+    {
+      name: "Native",
+      components: "native/components/*.js",
+    },
+  ],
   webpackConfig: {
     resolve: {
       // auto resolves any react-native import as react-native-web
