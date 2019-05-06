@@ -9,7 +9,7 @@
   <Checkbox label="Checked" checked />
 </p>
 <p>
-  <Checkbox label="Undefined" />
+  <Checkbox label="Undefined checkmark" />
 </p>
 <p>
   <Checkbox isFullWidth label="Full width" checked />

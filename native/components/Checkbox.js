@@ -1,25 +1,29 @@
 import * as React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
+import { TouchableOpacity } from "react-native";
 
-const Label = styled.Button`
+import Text from "./Text";
+
+const Label = styled.View`
   position: relative;
+  display: flex;
+  flex-direction: row;
 
   ${(props) =>
     props.isFullWidth &&
     `
-    display: flex;
+    width: 100%;
     justify-content: space-between;
   `};
 `;
 
-const LabelText = styled.View`
+const LabelText = styled(Text)`
   vertical-align: middle;
 `;
 
 const Check = styled.View`
   vertical-align: middle;
-  display: inline-block;
   width: 20px;
   height: 20px;
   color: black;
@@ -38,18 +42,15 @@ const Check = styled.View`
  */
 const Checkbox = ({ label, isLabelFirst, isFullWidth, checked, ...props }) => {
   return (
-    <Label
-      isFullWidth={isFullWidth}
-      accessible
-      accessibilityLabel={label}
-      {...props}
-    >
-      {isLabelFirst && <LabelText>{label}</LabelText>}
-      <Check isChecked={checked} isLabelFirst={isLabelFirst}>
-        {checked && <>✓</>}
-      </Check>
-      {!isLabelFirst && <LabelText>{label}</LabelText>}
-    </Label>
+    <TouchableOpacity {...props}>
+      <Label isFullWidth={isFullWidth} accessible accessibilityLabel={label}>
+        {isLabelFirst && <LabelText>{label}</LabelText>}
+        <Check isChecked={checked} isLabelFirst={isLabelFirst}>
+          {checked && <>✓</>}
+        </Check>
+        {!isLabelFirst && <LabelText>{label}</LabelText>}
+      </Label>
+    </TouchableOpacity>
   );
 };
 
