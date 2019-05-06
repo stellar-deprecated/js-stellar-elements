@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { Picker } from "react-native";
 
 import Input from "./Input";

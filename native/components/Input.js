@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 const Input = styled.TextInput`
   border: 1px solid black;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import PropTypes from "prop-types";
 
 const Label = styled.Button`

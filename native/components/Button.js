@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import color from "color";
 import PropTypes from "prop-types";
 
@@ -22,10 +22,8 @@ const ButtonColors = {
 const Button = styled.Button`
   background: ${(props) => ButtonColors[props.level].background};
   color: ${(props) => ButtonColors[props.level].color};
-  border: none;
   border-radius: 2px;
   padding: 5px 10px;
-  outline: none;
 
   &:focus {
     ${Outline};
