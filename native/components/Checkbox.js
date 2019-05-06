@@ -37,8 +37,7 @@ const Check = styled.View`
 `;
 
 /**
- * Note: unlike most other elements, this is a React component, not a
- * styled-component.
+ * Note: This exports a React component instead of a styled-component.
  */
 const Checkbox = ({ label, isLabelFirst, isFullWidth, checked, ...props }) => {
   return (

@@ -25,6 +25,9 @@ const El = styled.View`
   padding: 5px 10px;
 `;
 
+/**
+ * Note: This exports a React component instead of a styled-component.
+ */
 const Button = ({ level, children, ...props }) => (
   <TouchableOpacity {...props}>
     <El level={level}>{children}</El>
