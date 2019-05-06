@@ -80,6 +80,8 @@ Checkbox.defaultProps = {
 Checkbox.propTypes = {
   /** @ignore */
   checked: PropTypes.bool,
+
+  /** Labels are automatically wrapped in our styled <Text /> component. */
   label: PropTypes.string,
   /** If true, the label will appear to the left of the checkbox. */
   isLabelFirst: PropTypes.bool,
