@@ -1,12 +1,14 @@
 module.exports = {
   sections: [
     {
-      name: "Desktop",
+      name: "Web",
       components: "src/components/*.js",
+      content: "src/README.md",
     },
     {
-      name: "Native",
+      name: "React Native",
       components: "native/components/*.js",
+      content: "native/README.md",
     },
   ],
   pagePerSection: true,

@@ -12,9 +12,13 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,js,md}": [
+    "**/*.{ts,js}": [
       "prettier --config prettier.config.js --write",
       "eslint --fix",
+      "git add"
+    ],
+    "**/*.{ts,js,md}": [
+      "prettier --config prettier.config.js --write",
       "git add"
     ]
   },
@@ -54,10 +58,13 @@
     "eslint": "eslint .",
     "dev": "NODE_ENV=documentation styleguidist server",
     "build": "NODE_ENV=production webpack && yarn build:native",
-    "build:native": "NODE_ENV=production webpack --config webpack.native.js",
+    "build:native": "NODE_ENV=production webpack --config webpack.config.native.js",
     "build-docs": "NODE_ENV=documentation styleguidist build"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "^0.59.5",
+    "styled-components": "^4.2.0"
   }
 }
