@@ -1,31 +1,36 @@
 ```jsx
-<p>
-  <Button
-    onClick={() => console.log("This button IS clickable!!!")}
-    disabled={false}
-    level={Button.Levels.primary}
-  >
-    Button.Levels.primary
-  </Button>
-</p>
+import { View } from "react-native";
+import Text from "./Text";
 
-<p>
-  <Button
-    onClick={() => console.log("This button IS clickable!!!")}
-    disabled={false}
-    level={Button.Levels.secondary}
-  >
-    Button.Levels.secondary
-  </Button>
-</p>
+<View>
+  <View style={{ marginBottom: 20 }}>
+    <Button
+      onPress={() => console.log("This button IS clickable!!!")}
+      disabled={false}
+      level={Button.Levels.primary}
+    >
+      <Text>Button.Levels.primary</Text>
+    </Button>
+  </View>
 
-<p>
-  <Button
-    onClick={() => console.log("This button IS clickable!!!")}
-    disabled={false}
-    level={Button.Levels.tertiary}
-  >
-    Button.Levels.tertiary
-  </Button>
-</p>
+  <View style={{ marginBottom: 20 }}>
+    <Button
+      onPress={() => console.log("This button IS clickable!!!")}
+      disabled={false}
+      level={Button.Levels.secondary}
+    >
+      <Text>Button.Levels.secondary</Text>
+    </Button>
+  </View>
+
+  <View style={{ marginBottom: 20 }}>
+    <Button
+      onPress={() => console.log("This button IS clickable!!!")}
+      disabled={false}
+      level={Button.Levels.tertiary}
+    >
+      <Text>Button.Levels.tertiary</Text>
+    </Button>
+  </View>
+</View>;
 ```

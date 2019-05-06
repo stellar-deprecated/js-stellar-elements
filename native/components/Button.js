@@ -1,56 +1,35 @@
+import React from "react";
 import styled from "styled-components/native";
-import color from "color";
 import PropTypes from "prop-types";
-
-import { Outline } from "../shared";
+import { TouchableOpacity } from "react-native";
 
 const ButtonColors = {
   primary: {
     background: "green",
-    color: "white",
+    color: "#FFF",
   },
   secondary: {
     background: "blue",
-    color: "white",
+    color: "#FFF",
   },
   tertiary: {
-    background: "white",
-    color: "black",
+    background: "#FFF",
+    color: "#000",
   },
 };
 
-const Button = styled.Button`
-  background: ${(props) => ButtonColors[props.level].background};
+const El = styled.View`
+  background-color: ${(props) => ButtonColors[props.level].background};
   color: ${(props) => ButtonColors[props.level].color};
   border-radius: 2px;
   padding: 5px 10px;
-
-  &:focus {
-    ${Outline};
-  }
-
-  &:hover {
-    background: ${(props) =>
-      color(ButtonColors[props.level].background)
-        .alpha(0.9)
-        .toString()};
-  }
-
-  &:active {
-    background: ${(props) =>
-      color(ButtonColors[props.level].background)
-        .lighten(0.3)
-        .saturate(0.3)
-        .toString()};
-  }
-
-  &:disabled {
-    background: ${(props) =>
-      color(ButtonColors[props.level].background)
-        .alpha(0.5)
-        .toString()};
-  }
 `;
+
+const Button = ({ level, children, ...props }) => (
+  <TouchableOpacity {...props}>
+    <El level={level}>{children}</El>
+  </TouchableOpacity>
+);
 
 Button.Levels = {
   primary: "primary",
@@ -63,6 +42,9 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  children: PropTypes.node,
+  onPress: PropTypes.func,
+
   /**
    * The type of button to show. Don't pass a string; use the object
    * `Button.Levels` to pass a named constant.

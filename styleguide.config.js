@@ -9,6 +9,7 @@ module.exports = {
       components: "native/components/*.js",
     },
   ],
+  pagePerSection: true,
   webpackConfig: {
     resolve: {
       // auto resolves any react-native import as react-native-web
