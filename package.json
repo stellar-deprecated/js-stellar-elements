@@ -60,9 +60,9 @@
     "build-docs": "NODE_ENV=documentation styleguidist build"
   },
   "peerDependencies": {
-    "react": ">=15.x",
-    "react-dom": ">=15.x",
-    "react-native": ">=*",
-    "styled-components": ">=4.x"
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0",
+    "react-native": "*",
+    "styled-components": ">=4.0.0"
   }
 }
