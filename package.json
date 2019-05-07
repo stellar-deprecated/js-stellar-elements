@@ -38,8 +38,8 @@
     "peer-deps-externals-webpack-plugin": "^1.0.4",
     "prettier": "^1.17.0",
     "prop-types": "^15.7.2",
-    "react-art": "^16.8.6",
     "react": "^16.8.6",
+    "react-art": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-native": "^0.59.5",
     "react-native-web": "0.9.9",
@@ -60,9 +60,9 @@
     "build-docs": "NODE_ENV=documentation styleguidist build"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-native": "^0.59.5",
-    "styled-components": "^4.2.0"
+    "react": ">=15.x",
+    "react-dom": ">=15.x",
+    "react-native": ">=*",
+    "styled-components": ">=4.x"
   }
 }
