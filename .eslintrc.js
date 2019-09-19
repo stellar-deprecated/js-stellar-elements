@@ -3,7 +3,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ["@stellar/eslint-config"],
   parserOptions: {
     sourceType: "module",
   },

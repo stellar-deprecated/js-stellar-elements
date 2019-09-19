@@ -71,5 +71,9 @@
     "react-native": "*",
     "styled-components": ">=4.0.0"
   },
-  "dependencies": {}
+  "prettier": "@stellar/prettier-config",
+  "dependencies": {
+    "@stellar/eslint-config": "^1.0.0",
+    "@stellar/prettier-config": "^1.0.1"
+  }
 }
