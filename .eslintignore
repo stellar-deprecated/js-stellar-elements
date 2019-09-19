@@ -2,3 +2,4 @@ dist
 styleguide
 node_modules
 !.storybook
+webpack.config.js

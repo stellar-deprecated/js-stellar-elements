@@ -62,16 +62,14 @@ const Check = styled.span`
 /**
  * Note: This exports a React component instead of a styled-component.
  */
-const Checkbox = ({ label, isLabelFirst, isFullWidth, checked, ...props }) => {
-  return (
-    <Label isFullWidth={isFullWidth}>
-      {isLabelFirst && <LabelText>{label}</LabelText>}
-      <Input type="checkbox" {...props} checked={checked} />
-      <Check isChecked={checked} isLabelFirst={isLabelFirst} />
-      {!isLabelFirst && <LabelText>{label}</LabelText>}
-    </Label>
-  );
-};
+const Checkbox = ({ label, isLabelFirst, isFullWidth, checked, ...props }) => (
+  <Label isFullWidth={isFullWidth}>
+    {isLabelFirst && <LabelText>{label}</LabelText>}
+    <Input type="checkbox" {...props} checked={checked} />
+    <Check isChecked={checked} isLabelFirst={isLabelFirst} />
+    {!isLabelFirst && <LabelText>{label}</LabelText>}
+  </Label>
+);
 
 Checkbox.defaultProps = {
   isLabelFirst: false,
@@ -85,7 +83,7 @@ Checkbox.propTypes = {
   label: PropTypes.string,
   /** If true, the label will appear to the left of the checkbox. */
   isLabelFirst: PropTypes.bool,
-  /** If true, take up the full width and justify the contents.*/
+  /** If true, take up the full width and justify the contents. */
   isFullWidth: PropTypes.bool,
 };
 

@@ -64,7 +64,7 @@ Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   /** If true, the label will appear to the left of the checkbox. */
   isLabelFirst: PropTypes.bool,
-  /** If true, take up the full width and justify the contents.*/
+  /** If true, take up the full width and justify the contents. */
   isFullWidth: PropTypes.bool,
 };
 
