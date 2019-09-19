@@ -26,6 +26,10 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-react-native-web": "^0.11.2",
@@ -57,12 +61,15 @@
     "dev": "NODE_ENV=documentation styleguidist server",
     "build": "NODE_ENV=production webpack && yarn build:native",
     "build:native": "NODE_ENV=production webpack --config webpack.config.native.js",
-    "build-docs": "NODE_ENV=documentation styleguidist build"
+    "build-docs": "NODE_ENV=documentation styleguidist build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": ">=16.3.0",
     "react-dom": ">=16.3.0",
     "react-native": "*",
     "styled-components": ">=4.0.0"
-  }
+  },
+  "dependencies": {}
 }

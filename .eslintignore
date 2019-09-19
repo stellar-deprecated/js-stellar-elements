@@ -1,3 +1,4 @@
 dist
 styleguide
 node_modules
+!.storybook
