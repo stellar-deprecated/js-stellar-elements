@@ -1,15 +1,20 @@
 # Stellar Elements
 
-A small design system for Stellar.org user interfaces.
-
-You can view and play with the components on
-[Storybook](https://stellar-elements.netlify.com).
+A small design system for Stellar.org user interfaces using
+[styleguidist](https://react-styleguidist.js.org/).
 
 # Contributing
 
 ## Developing
 
-Run `yarn storybook` to run the Storybook watcher locally.
+You can `import` external files in your examples:
+
+<!-- prettier-ignore -->
+```jsx
+import { all } from 'dog-names'
+import { RandomButton } from '../RandomButton'
+;<RandomButton variants={all} />
+```
 
 ## Merging in changes
 
