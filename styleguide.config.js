@@ -1,9 +1,37 @@
+const { styles, theme } = require("./styleguide.styles");
+
 module.exports = {
   sections: [
     {
       name: "Web",
-      components: "src/components/*.js",
       content: "src/README.md",
+      sections: [
+        {
+          name: "Typography & Colors",
+          components: () => [
+            "src/components/GlobalStyle.js",
+            "src/components/PageHeader.js",
+            "src/components/SectionHeader.js",
+            "src/components/SubsectionHeader.js",
+          ],
+        },
+        {
+          name: "Components",
+          components: () => [
+            "src/components/BulletedList.js",
+            "src/components/Button.js",
+          ],
+        },
+        {
+          name: "Form",
+          components: () => [
+            "src/components/Checkbox.js",
+            "src/components/Input.js",
+            "src/components/Select.js",
+            "src/components/Textarea.js",
+          ],
+        },
+      ],
     },
     {
       name: "React Native",
@@ -16,17 +44,16 @@ module.exports = {
       links: [
         {
           rel: "stylesheet",
-          href:
+          href: [
             "https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap",
+            "https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap",
+          ],
         },
       ],
     },
   },
-  theme: {
-    fontFamily: {
-      base: '"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif',
-    },
-  },
+  styles,
+  theme,
   pagePerSection: true,
   webpackConfig: {
     resolve: {
