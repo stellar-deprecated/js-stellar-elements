@@ -1,15 +1,30 @@
 # Stellar Elements
 
-A small design system for Stellar.org user interfaces.
-
-You can view and play with the components on
-[Storybook](https://stellar-elements.netlify.com).
+A small design system for Stellar.org user interfaces using
+[styleguidist](https://react-styleguidist.js.org/).
 
 # Contributing
 
 ## Developing
 
-Run `yarn storybook` to run the Storybook watcher locally.
+Code examples in Markdown use ES6+JSX syntax. You can use the current component
+without explicitly importing it:
+
+````jsx
+// ```jsx inside Button/Readme.md or Button.md
+<Button>Push Me</Button>
+````
+
+To use other components, you need to explicity import them. Reference on
+[Writing code examples on styleguidist](https://react-styleguidist.js.org/docs/documenting.html#writing-code-examples)
+
+<!-- prettier-ignore -->
+````jsx
+// ```jsx inside Panel/Readme.md or Panel.md
+import { all } from 'dog-names'
+import { RandomButton } from '../RandomButton'
+;<RandomButton variants={all} />
+````
 
 ## Merging in changes
 

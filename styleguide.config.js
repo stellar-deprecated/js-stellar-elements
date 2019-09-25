@@ -11,6 +11,22 @@ module.exports = {
       content: "native/README.md",
     },
   ],
+  template: {
+    head: {
+      links: [
+        {
+          rel: "stylesheet",
+          href:
+            "https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap",
+        },
+      ],
+    },
+  },
+  theme: {
+    fontFamily: {
+      base: '"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif',
+    },
+  },
   pagePerSection: true,
   webpackConfig: {
     resolve: {

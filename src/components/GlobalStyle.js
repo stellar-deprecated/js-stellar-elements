@@ -4,13 +4,12 @@ import { createGlobalStyle } from "styled-components";
  * Global styles: fonts, default typography, etc.
  */
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
-
   body,
   html {
-    font-family: Roboto, sans-serif;
-    font-size: 18px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
     line-height: 28px;
+    letter-spacing: normal;
   }
 
   body,
@@ -22,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     line-height: inherit;
   }
-
 `;
 
 /** @component */
