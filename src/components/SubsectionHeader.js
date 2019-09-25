@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { PALETTE } from "../shared";
 
-const H3 = styled.h2`
+const SubsectionHeader = styled.h3`
   font-size: 1.125rem;
   line-height: 1.5;
   font-weight: normal;
@@ -10,4 +10,4 @@ const H3 = styled.h2`
 `;
 
 /** @component */
-export default H3;
+export default SubsectionHeader;

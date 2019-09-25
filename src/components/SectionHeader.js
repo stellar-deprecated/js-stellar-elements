@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { PALETTE } from "../shared";
 
-const H1 = styled.h1`
-  font-size: 2rem;
-  line-height: 1.25;
+const SectionHeader = styled.h2`
+  font-size: 1.5rem;
+  line-height: 1.5;
   font-weight: normal;
   color: ${PALETTE.black};
   margin: 0;
 `;
 
 /** @component */
-export default H1;
+export default SectionHeader;

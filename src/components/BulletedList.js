@@ -9,7 +9,7 @@ const El = styled.ul`
   color: ${PALETTE.black60};
   padding-left: 1.375rem;
 
-  li {
+  & > li {
     position: relative;
     margin: 0.5rem 0;
 
