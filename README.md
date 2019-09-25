@@ -7,14 +7,24 @@ A small design system for Stellar.org user interfaces using
 
 ## Developing
 
-You can `import` external files in your examples:
+Code examples in Markdown use ES6+JSX syntax. You can use the current component
+without explicitly importing it:
+
+````jsx
+// ```jsx inside Button/Readme.md or Button.md
+<Button>Push Me</Button>
+````
+
+To use other components, you need to explicity import them. Reference on
+[Writing code examples on styleguidist](https://react-styleguidist.js.org/docs/documenting.html#writing-code-examples)
 
 <!-- prettier-ignore -->
-```jsx
+````jsx
+// ```jsx inside Panel/Readme.md or Panel.md
 import { all } from 'dog-names'
 import { RandomButton } from '../RandomButton'
 ;<RandomButton variants={all} />
-```
+````
 
 ## Merging in changes
 

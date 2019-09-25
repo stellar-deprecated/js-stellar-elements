@@ -21,27 +21,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     line-height: inherit;
   }
-
-  h1, h2, h3 {
-    font-weight: normal;
-    color: ${(props) => props.color};
-    margin: 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-    line-height: 1.25;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
-
-  h3 {
-    font-size: 1.125rem;
-    line-height: 1.5;
-  }
 `;
 
 /** @component */
