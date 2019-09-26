@@ -34,21 +34,24 @@ const CardEl = styled.div`
  * [Design Mockup](https://app.zeplin.io/project/5d5aecf2918cf74d46363015/screen/5d813f575d1398783f61df5b)
  */
 
-const Card = ({ title, icon, children }) => (
-  <CardEl>
+const Card = React.forwardRef(function Card(
+  { title, icon, children, ...props },
+  ref,
+) {
+  <CardEl ref={ref} {...props}>
     {icon && <img src={icon} alt={title} />}
     <SubsectionHeader color={PALETTE.black60}>{title}</SubsectionHeader>
     <Text>{children}</Text>
-  </CardEl>
-);
+  </CardEl>;
+});
 
 Card.propTypes = {
   /**
    * The title of the card
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   /**
-   * The icon of the card. @TO DO
+   * The icon of the card. @TODO
    */
   icon: PropTypes.string,
   /**
