@@ -38,11 +38,13 @@ const Card = React.forwardRef(function Card(
   { title, icon, children, ...props },
   ref,
 ) {
-  <CardEl ref={ref} {...props}>
-    {icon && <img src={icon} alt={title} />}
-    <SubsectionHeader color={PALETTE.black60}>{title}</SubsectionHeader>
-    <Text>{children}</Text>
-  </CardEl>;
+  return (
+    <CardEl ref={ref} {...props}>
+      {icon && <img src={icon} alt={title} />}
+      <SubsectionHeader color={PALETTE.black60}>{title}</SubsectionHeader>
+      <Text>{children}</Text>
+    </CardEl>
+  );
 });
 
 Card.propTypes = {
