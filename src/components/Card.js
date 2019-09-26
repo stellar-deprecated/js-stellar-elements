@@ -29,6 +29,11 @@ const CardEl = styled.div`
   }
 `;
 
+/**
+ * Note: This exports a React component instead of a styled-component.
+ * [Design Mockup](https://app.zeplin.io/project/5d5aecf2918cf74d46363015/screen/5d813f575d1398783f61df5b)
+ */
+
 const Card = ({ title, icon, children }) => (
   <CardEl>
     {icon && <img src={icon} alt={title} />}
@@ -39,11 +44,16 @@ const Card = ({ title, icon, children }) => (
 
 Card.propTypes = {
   /**
-   * The type of button to show. Don't pass a string; use the object
-   * `Card.Types` to pass a named constant.
+   * The title of the card
    */
   title: PropTypes.string.isRequired,
+  /**
+   * The icon of the card. @TO DO
+   */
   icon: PropTypes.string,
+  /**
+   * The copy of the card
+   */
   children: PropTypes.node.isRequired,
 };
 
