@@ -5,7 +5,7 @@ const SubsectionHeader = styled.h3`
   font-size: 1.125rem;
   line-height: 1.5;
   font-weight: normal;
-  color: ${PALETTE.black};
+  color: ${(props) => (props.color ? props.color : PALETTE.black)};
   margin: 0;
 `;
 
