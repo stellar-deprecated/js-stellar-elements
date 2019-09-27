@@ -25,7 +25,6 @@ const CardEl = styled.div`
 
   img {
     display: block;
-    overflow: hidden;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
