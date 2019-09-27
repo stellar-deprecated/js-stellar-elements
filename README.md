@@ -21,9 +21,9 @@ To use other components, you need to explicity import them. Reference on
 <!-- prettier-ignore -->
 ````jsx
 // ```jsx inside Panel/Readme.md or Panel.md
-import { all } from 'dog-names'
-import { RandomButton } from '../RandomButton'
-;<RandomButton variants={all} />
+import { all } from 'dog-names';
+import { RandomButton } from '../RandomButton';
+<RandomButton variants={all} />
 ````
 
 ## Merging in changes

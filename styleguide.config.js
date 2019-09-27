@@ -13,14 +13,18 @@ module.exports = {
             "src/components/PageHeader.js",
             "src/components/SectionHeader.js",
             "src/components/SubsectionHeader.js",
+            "src/components/Text.js",
           ],
+          usageMode: "expand",
         },
         {
           name: "Components",
           components: () => [
             "src/components/BulletedList.js",
             "src/components/Button.js",
+            "src/components/Card.js",
           ],
+          usageMode: "expand",
         },
         {
           name: "Form",
@@ -30,6 +34,7 @@ module.exports = {
             "src/components/Select.js",
             "src/components/Textarea.js",
           ],
+          usageMode: "expand",
         },
       ],
     },
