@@ -18,6 +18,14 @@ module.exports = {
           usageMode: "expand",
         },
         {
+          name: "Layout",
+          components: () => [
+            "src/components/Grid.js",
+            "src/components/GridItem.js",
+          ],
+          usageMode: "expand",
+        },
+        {
           name: "Components",
           components: () => [
             "src/components/BulletedList.js",
