@@ -19,3 +19,24 @@ export const PALETTE = {
   black80: "#333333",
   purple: "#3e1bdb",
 };
+
+export const SCREEN_SIZES = {
+  mobile: 420,
+  tablet: 769,
+  laptop: 1025,
+  desktop: 1281,
+};
+
+export const MEDIA_QUERIES = {
+  ltMobile: `max-width: ${SCREEN_SIZES.mobile}px`,
+  gtMobile: `min-width: ${SCREEN_SIZES.mobile}px`,
+  ltTablet: `max-width: ${SCREEN_SIZES.tablet}px`,
+  gtTablet: `min-width: ${SCREEN_SIZES.tablet}px`,
+  ltLaptop: `max-width: ${SCREEN_SIZES.laptop}px`,
+  gtLaptop: `min-width: ${SCREEN_SIZES.laptop}px`,
+  ltDesktop: `max-width: ${SCREEN_SIZES.desktop}px`,
+  gtDesktop: `min-width: ${SCREEN_SIZES.desktop}px`,
+
+  canHover: `hover: hover`,
+  noHover: `hover: none`,
+};
