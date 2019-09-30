@@ -84,6 +84,12 @@ const styles = {
     content: {
       paddingTop: "3.75rem",
     },
+    "@global body": {
+      fontFamily: "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
+      fontSize: "16px",
+      lineHeight: "28px",
+      letterSpacing: "normal",
+    },
     sidebar: {
       border: 0,
       "& li > a": {

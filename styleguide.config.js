@@ -1,6 +1,7 @@
 const { styles, theme } = require("./styleguide.styles");
 
 module.exports = {
+  components: "src/components/**/[A-Z]*.js",
   sections: [
     {
       name: "Web",
@@ -23,16 +24,6 @@ module.exports = {
             "src/components/BulletedList.js",
             "src/components/Button.js",
             "src/components/Card.js",
-          ],
-          usageMode: "expand",
-        },
-        {
-          name: "Form",
-          components: () => [
-            "src/components/Checkbox.js",
-            "src/components/Input.js",
-            "src/components/Select.js",
-            "src/components/Textarea.js",
           ],
           usageMode: "expand",
         },
