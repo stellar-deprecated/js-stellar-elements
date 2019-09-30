@@ -1,9 +1,23 @@
-import Button from "./components/Button";
-import Input from "./components/Input";
-import Select from "./components/Select";
-import Checkbox from "./components/Checkbox";
-import Textarea from "./components/Textarea";
-import GlobalStyle from "./components/GlobalStyle";
+import BulletedList from "./components/BulletedList";
+import Card from "./components/Card";
+import PageHeader from "./components/PageHeader";
+import SectionHeader from "./components/SectionHeader";
+import SubsectionHeader from "./components/SubsectionHeader";
+import Text from "./components/Text";
 
-export default { Button, Input, Select, Checkbox, Textarea, GlobalStyle };
-export { Button, Input, Select, Checkbox, Textarea, GlobalStyle };
+export default {
+  BulletedList,
+  Card,
+  PageHeader,
+  SectionHeader,
+  SubsectionHeader,
+  Text,
+};
+export {
+  BulletedList,
+  Card,
+  PageHeader,
+  SectionHeader,
+  SubsectionHeader,
+  Text,
+};
