@@ -20,6 +20,7 @@ module.exports = {
         {
           name: "Components",
           components: () => [
+            "src/components/Expansion.js",
             "src/components/BulletedList.js",
             "src/components/Button.js",
             "src/components/Card.js",

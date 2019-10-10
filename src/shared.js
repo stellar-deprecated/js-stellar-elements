@@ -12,6 +12,7 @@ export const FONT_WEIGHT = {
 
 export const PALETTE = {
   white: "#ffffff",
+  white60: "#f2f2f2",
   white80: "#fafafa",
   black: "#000000",
   black30: "#999999",
