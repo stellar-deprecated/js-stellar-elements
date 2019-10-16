@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
-    line-height: 28px;
+    line-height: normal;
     letter-spacing: normal;
   }
 

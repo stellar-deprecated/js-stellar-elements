@@ -23,6 +23,8 @@ module.exports = {
             "src/components/BulletedList.js",
             "src/components/Button.js",
             "src/components/Card.js",
+            "src/components/CodeExample.js",
+            "src/components/Table.js",
           ],
           usageMode: "expand",
         },
@@ -50,7 +52,7 @@ module.exports = {
         {
           rel: "stylesheet",
           href: [
-            "https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap",
+            "https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap",
             "https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap",
           ],
         },

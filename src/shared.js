@@ -10,14 +10,21 @@ export const FONT_WEIGHT = {
   medium: "500",
 };
 
+export const FONT_FAMILY = {
+  base: '"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif',
+  monospace: '"IBM Plex Mono", Consolas, Menlo, monospace',
+};
+
 export const PALETTE = {
   white: "#ffffff",
+  white60: "#f2f2f2",
   white80: "#fafafa",
   black: "#000000",
   black30: "#999999",
   black60: "#666666",
   black80: "#333333",
-  purple: "#3e1bdb",
+  black90: "#292d3d",
+  purple: "#490be3",
 };
 
 export const SCREEN_SIZES = {
